@@ -58,7 +58,7 @@ jobs:
 
     - name: Zip all files for upload between jobs
     # IMPORTANT: .solid is a hidden folder and will NOT be included in the zip unless we specify it
-      run: zip next.zip ./* .next -qr
+      run: zip -r --symlinks next.zip ./* .next
 
     # Upload Artifact
     - name: Upload artifact for deployment job
