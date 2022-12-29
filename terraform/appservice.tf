@@ -5,7 +5,7 @@
 resource "azurerm_service_plan" "cafekopp_asp" {
 name                = var.service-plan["name"]
 resource_group_name = azurerm_resource_group.dev_web_cafekopp2.name
-location            = azurerm_resource_group.dev_web_cafekopp.location
+location            = azurerm_resource_group.dev_web_cafekopp2.location
 os_type             = var.service-plan["os_type"]
 sku_name            = var.service-plan["sku_name"]
 tags                = var.dev-tags
