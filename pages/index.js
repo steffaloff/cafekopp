@@ -4,7 +4,23 @@ import Link from 'next/link'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 
+import { useSession, signIn, signOut } from "next-auth/react"
+
 const inter = Inter({ subsets: ['latin'] })
+
+export function Component() {
+    const { data: session } = useSession()
+    if(session) {
+        return <>
+        Signed in as {session.user.email} <br/>
+        <button onClick={() => signOut()}>Sign out</button>
+        </>
+    }
+    return <>
+    Not signed in <br/>
+    <button onClick={() => signIn()}>Sign in</button>
+    </>
+}
 
 export default function Home() {
   return (
@@ -31,6 +47,7 @@ export default function Home() {
 
             </a>
           </div>
+            <Component/>
         </div>
 
         <div className={styles.center}>
