@@ -1,0 +1,24 @@
+.contactForm {
+    width: inherit;
+}
+
+.contactForm > label {
+    float: left;
+    padding-top: 1rem;
+    width: 4rem;
+}
+.contactForm > input {
+    float: right;
+    padding: 0.4rem;
+    width: 15rem;
+}
+
+.contactForm > textarea {
+    float: right;
+    padding: 0.4rem;
+    width: 15rem;
+}
+
+.messageForm {
+    height: 8rem;
+}

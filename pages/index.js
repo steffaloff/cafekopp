@@ -3,23 +3,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
-
 import { useSession, signIn, signOut } from "next-auth/react"
 
 const inter = Inter({ subsets: ['latin'] })
 
-export function Component() {
+export function Component(props) {
     const { data: session } = useSession()
     if(session) {
         return <>
-        Signed in as {session.user.email} <br/>
+        <div className={styles.description}>
+        <p>Signed in as {session.user.email}</p>
         <button onClick={() => signOut()}>Sign out</button>
-        </>
+        </div>
+            </>
     }
     return <>
-    Not signed in <br/>
+    <div className={styles.description}>
+        Not signed in &nbsp;
     <button onClick={() => signIn()}>Sign in</button>
-    </>
+    </div>
+        </>
 }
 
 export default function Home() {
@@ -33,28 +36,20 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>
-            Besøk vår&nbsp;
-              <a href="https://www.facebook.com/CafeKoppCatering/"><code className={styles.code}>Facebookside</code></a>
-          </p>
-          <div>
-            <a
-              href="https://steffaloff.cloud"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}Steffaloff
+            <div>
+            <p>
+            Besøk vår&nbsp; <a href="https://www.facebook.com/CafeKoppCatering/"><code className={styles.code}>Facebookside</code></a>
+            </p>
+            </div>
+            <div>
+                <Component/>
+            </div>
 
-            </a>
-          </div>
-            <Component/>
         </div>
 
         <div className={styles.center}>
             <h1>CAFEkopp</h1>
             <p>catering</p>
-
-
         </div>
 
         <div className={styles.grid}>
@@ -95,6 +90,16 @@ export default function Home() {
                 </p>
             </Link>
         </div>
+          <div>
+              <a
+                  href="https://steffaloff.cloud"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                  By{' '}Steffaloff
+
+              </a>
+          </div>
       </main>
     </>
   )
