@@ -4,7 +4,7 @@
 
 provider "azurerm" {
 alias           = "professional"
-subscription_id = ARM_SUBSCRIPTION_ID
+subscription_id = var.SUBSCRIPTION_ID
 
 features {}
 }
