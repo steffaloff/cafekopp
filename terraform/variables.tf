@@ -3,6 +3,9 @@
 #############
 
 #Dryrun #1
+variable "SUBSCRIPTION_ID" {
+  type = string
+}
 
 variable "prefix" {
 default = "dev"

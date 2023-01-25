@@ -1,0 +1,58 @@
+.menyItemContainer {
+
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    min-height: 1vh;
+}
+
+.menyItemContainer.active {
+    animation: menu-animation 0.5s ease;
+    transform: translate(10px) scale(0.8);
+}
+@keyframes menu-animation {
+    from{
+        transform: translate(0);
+    }
+  to{
+        transform: translateZ(10px) scale(0.8);
+    }
+}
+
+.menyItemContainer.koldtbord {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+}
+
+.menyItemContainer.koldtbord.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+}
+
+.menyItemContainer.tapas {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+}
+
+.menyItemContainer.tapas.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+}

@@ -1,19 +1,18 @@
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import styles2 from '../styles/MenyItem.module.css'
 
 export default function Matitem(props) {
 
     console.log(props);
     return (
             <>
-            <main className={styles.main}>
-                <div className={styles.card}>
-                    <h3>{props.mat.info.tittel}</h3>
-                    <p>Kr {' '}{props.mat.info.pris}</p>
-                    <p>{props.mat.info.beskrivelse}</p>
+                    <div className={`${styles2.menyItemContainer} ${props.active ? "active" : ""}`}>
+                    <h3>{props.rett.info.tittel}</h3>
+                    <p>{props.rett.info.beskrivelse}</p>
+                        <p>Kr:{props.rett.info.pris}</p>
+                    </div>
 
-                </div>
-            </main>
             </>
             )
 }
