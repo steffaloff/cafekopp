@@ -37,3 +37,27 @@ default = {
 name = "cafekopp2"
 }
 }
+
+########################
+# App Service Settings #
+########################
+
+variable "FACEBOOK_SECRET" {
+  type = string
+}
+variable "FACEBOOK_ID" {
+  type = string
+}
+variable "NEXT_GITHUB_ID" {
+  type = string
+}
+variable "NEXT_GITHUB_SECRET" {
+  type = string
+}
+variable "NEXTAUTH_SECRET" {
+  type = string
+}
+variable "NEXTAUTH_URL" {
+  type = string
+}
+
