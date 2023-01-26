@@ -23,6 +23,7 @@ on:
         - main
     paths-ignore:
         - 'terraform/**'
+        - '.github/**'
   workflow_dispatch:
 
 env:
