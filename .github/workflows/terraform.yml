@@ -70,7 +70,7 @@ jobs:
     environment: production
     # Add Environment variables for TF SPN
     env:
-     TF_LOG: TRACE
+     TF_INPUT: 0
      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
