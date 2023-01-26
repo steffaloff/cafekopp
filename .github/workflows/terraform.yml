@@ -70,6 +70,7 @@ jobs:
     environment: production
     # Add Environment variables for TF SPN
     env:
+     TF_LOG: TRACE
      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
@@ -81,6 +82,7 @@ jobs:
      TF_VAR_NEXT_GITHUB_SECRET: ${{ secrets.NEXT_GITHUB_SECRET }}
      TF_VAR_NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
      TF_VAR_NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+
 
     #  ARM_CLIENT_ID: ${{ secrets.TF_VAR_ARM_CLIENT_ID }}
     #  ARM_CLIENT_SECRET: ${{ secrets.TF_VAR_ARM_CLIENT_SECRET }}
