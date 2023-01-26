@@ -94,6 +94,11 @@ jobs:
         working-directory: terraform
 
     steps:
+    # Print Variables
+    - name: Print Variables
+      run: |
+        echo $FACEBOOK_ID
+
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v2
