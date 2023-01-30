@@ -45,7 +45,7 @@ node_version = "16-lts"
               "NEXTAUTH_SECRET",
               "NEXTAUTH_URL",
             ]
-          #connection_string_names = []
+          connection_string_names = []
   }
 }
 
