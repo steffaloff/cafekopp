@@ -116,8 +116,8 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: | 
-            terraform plan -var FACEBOOK_SECRET=TF_VAR_FACEBOOK_SECRET /
+      run: |
+        terraform plan -var FACEBOOK_SECRET=TF_VAR_FACEBOOK_SECRET /
         -var FACEBOOK_ID=TF_VAR_FACEBOOK_ID /
         -var NEXT_GITHUB_ID=TF_VAR_NEXT_GITHUB_ID /
         -var NEXT_GITHUB_SECRET=TF_VAR_NEXT_GITHUB_SECRET /
