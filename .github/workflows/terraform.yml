@@ -118,10 +118,10 @@ jobs:
     - name: Terraform Plan
       run: >
         terraform plan -var FACEBOOK_SECRET=TF_VAR_FACEBOOK_SECRET /
-        -var FACEBOOK_ID=TF_VAR_FACEBOOK_ID /
-        -var NEXT_GITHUB_ID=TF_VAR_NEXT_GITHUB_ID /
-        -var NEXT_GITHUB_SECRET=TF_VAR_NEXT_GITHUB_SECRET /
-        -var NEXTAUTH_SECRET=TF_VAR_NEXTAUTH_SECRET /
+        -var FACEBOOK_ID=TF_VAR_FACEBOOK_ID
+        -var NEXT_GITHUB_ID=TF_VAR_NEXT_GITHUB_ID
+        -var NEXT_GITHUB_SECRET=TF_VAR_NEXT_GITHUB_SECRET
+        -var NEXTAUTH_SECRET=TF_VAR_NEXTAUTH_SECRET
         -var NEXTAUTH_URL=TF_VAR_NEXTAUTH_URL
 
       # On push to main, build or change infrastructure according to Terraform configuration files
