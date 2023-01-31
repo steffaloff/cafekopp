@@ -3,12 +3,12 @@
 ###############
 
 provider "azurerm" {
-alias           = "professional"
-subscription_id = var.SUBSCRIPTION_ID
+  alias           = "professional"
+  subscription_id = var.SUBSCRIPTION_ID
 
-features {}
+  features {}
 }
 
 provider "azurerm" {
-features {}
+  features {}
 }

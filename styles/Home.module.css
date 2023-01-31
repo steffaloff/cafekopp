@@ -82,6 +82,12 @@
     width: inherit;
 }
 
+.card.active {
+    animation: menu-animation 0.5s ease;
+    transform: translate(10px) scale(0.8);
+    transition: all 5s ease;
+}
+
 
 .center {
   display: flex;
@@ -296,4 +302,13 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+@keyframes menu-animation {
+    from{
+        transform: translate(0);
+    }
+  to{
+        transform: translateZ(10px) scale(0.8);
+    }
 }

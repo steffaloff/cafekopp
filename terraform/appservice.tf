@@ -3,12 +3,12 @@
 ####################
 
 resource "azurerm_service_plan" "cafekopp_asp" {
-name                = var.service-plan["name"]
-resource_group_name = azurerm_resource_group.dev_web_cafekopp2.name
-location            = azurerm_resource_group.dev_web_cafekopp2.location
-os_type             = var.service-plan["os_type"]
-sku_name            = var.service-plan["sku_name"]
-tags                = var.dev-tags
+  name                = var.service-plan["name"]
+  resource_group_name = azurerm_resource_group.dev_web_cafekopp2.name
+  location            = azurerm_resource_group.dev_web_cafekopp2.location
+  os_type             = var.service-plan["os_type"]
+  sku_name            = var.service-plan["sku_name"]
+  tags                = var.dev-tags
 }
 
 ###############
@@ -16,17 +16,17 @@ tags                = var.dev-tags
 ###############
 
 resource "azurerm_linux_web_app" "cafekopp_as" {
-name                = var.app-service["name"]
-resource_group_name = azurerm_resource_group.dev_web_cafekopp2.name
-location            = azurerm_service_plan.cafekopp_asp.location
-service_plan_id     = azurerm_service_plan.cafekopp_asp.id
+  name                = var.app-service["name"]
+  resource_group_name = azurerm_resource_group.dev_web_cafekopp2.name
+  location            = azurerm_service_plan.cafekopp_asp.location
+  service_plan_id     = azurerm_service_plan.cafekopp_asp.id
 
-site_config {
+  site_config {
 
-application_stack {
-node_version = "16-lts"
-}
-}
+    application_stack {
+      node_version = "16-lts"
+    }
+  }
   app_settings = {
     "FACEBOOK_ID"     = var.FACEBOOK_ID
     "FACEBOOK_SECRET" = var.FACEBOOK_SECRET
@@ -37,15 +37,30 @@ node_version = "16-lts"
   }
 
   sticky_settings {
-    app_setting_names       = [
-              "FACEBOOK_ID",
-              "FACEBOOK_SECRET",
-              "GITHUB_ID",
-              "GITHUB_SECRET",
-              "NEXTAUTH_SECRET",
-              "NEXTAUTH_URL",
-            ]
-          #connection_string_names = []
+    app_setting_names = [
+      "FACEBOOK_ID",
+      "FACEBOOK_SECRET",
+      "GITHUB_ID",
+      "GITHUB_SECRET",
+      "NEXTAUTH_SECRET",
+      "NEXTAUTH_URL",
+    ]
+    #connection_string_names = []
+  }
+  identity {
+    type = "SystemAssigned"
+  }
+}
+
+######################
+# Service Connection #
+######################
+resource "azurerm_app_service_connection" "cafekopp_sc_storage" {
+  name               = "cafekopp-storage-account"
+  app_service_id     = azurerm_linux_web_app.cafekopp_as.id
+  target_resource_id = azurerm_storage_account.cafekopp2_storage.id
+  authentication {
+    type = "systemAssignedIdentity"
   }
 }
 

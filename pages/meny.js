@@ -51,7 +51,7 @@ export default function Meny({items}) {
                             </Link>
 
                     )*/}
-                    <div className={styles.card} onClick={kategoriValg} id="pasmurt">
+                    <div className={`${styles.card} ${active ? "active" : ""}`} onClick={kategoriValg} id="pasmurt">
                         <h3 onClick={kategoriValg} id="pasmurt">Påsmurt</h3>
 
                         {active && kategori.match('pasmurt') && items.filter(mat => mat.kategori === 'pasmurt').map(mat => {
@@ -73,7 +73,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett}  />
+                                                <Matitem key={rett.id} rett={rett} active={active}  />
                                                 )}))
 
                         })}
@@ -87,7 +87,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett}  />
+                                                <Matitem key={rett.id} rett={rett} active={active} />
                                                 )}))
 
                         })}
@@ -100,7 +100,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett}  />
+                                                <Matitem key={rett.id} rett={rett} active={active} />
                                                 )}))
 
                         })}
@@ -113,7 +113,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett}  />
+                                                <Matitem key={rett.id} rett={rett} active={active} />
                                                 )}))
 
                         })}
@@ -126,7 +126,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett}  />
+                                                <Matitem key={rett.id} rett={rett} active={active} />
                                                 )}))
 
                         })}
@@ -139,7 +139,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett}  />
+                                                <Matitem key={rett.id} rett={rett} active={active} />
                                                 )}))
 
                         })}
@@ -152,7 +152,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett}  />
+                                                <Matitem key={rett.id} rett={rett} active={active} />
                                                 )}))
 
                         })}
@@ -165,7 +165,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett}  />
+                                                <Matitem key={rett.id} rett={rett} active={active} />
                                                 )}))
 
                         })}
