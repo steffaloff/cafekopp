@@ -35,7 +35,7 @@ resource "azurerm_resource_group" "dev_web_cafekopp2" {
 ###################
 # Storage Account #
 ###################
-resource "azurerm_storage_account" "cafekopp2_storage" {
+resource "azurerm_storage_account" "cafekopp2storage" {
   account_replication_type = "LRS"
   account_tier             = "Standard"
   location                 = var.default-location
