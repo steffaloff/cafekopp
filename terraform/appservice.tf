@@ -58,7 +58,7 @@ resource "azurerm_linux_web_app" "cafekopp_as" {
 resource "azurerm_app_service_connection" "cafekopp_sc_storage" {
   name               = "cafekopp-storage-account"
   app_service_id     = azurerm_linux_web_app.cafekopp_as.id
-  target_resource_id = azurerm_storage_account.cafekopp2storage.id
+  target_resource_id = azurerm_storage_account.cafekopp2_storage.id
   authentication {
     type = "systemAssignedIdentity"
   }
