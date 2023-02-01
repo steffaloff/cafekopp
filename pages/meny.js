@@ -35,6 +35,9 @@ export default function Meny({items}) {
     }
 
 
+    const baseURL = "https://cafekoppstorage.blob.core.windows.net"
+
+
     return (
             <>
             <main className={styles.main}>
@@ -59,7 +62,7 @@ export default function Meny({items}) {
                                     mat.retter.map(rett => {
                                         //console.log(rett)
                                         return(
-                                                <Matitem key={rett.id} rett={rett} active={active} />
+                                                <Matitem key={rett.id} rett={rett} active={active} url={`${baseURL}/${kategori}/${rett.id}.webp`} />
                                                 )}))
 
                         })}

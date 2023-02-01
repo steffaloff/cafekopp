@@ -3,4 +3,16 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+const azureimages = {
+    images: {
+        remotePatterns: [
+        {
+            protocol: 'https'
+            hostname: 'cafekoppstorage.blob.core.windows.net'
+            port: ''
+            pathname: '**'
+        }]
+    }
+}
+
+module.exports = nextConfig, azureimages
