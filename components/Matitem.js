@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/Image'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import styles2 from '../styles/MenyItem.module.css'
 
@@ -11,7 +11,7 @@ export default function Matitem(props) {
             <>
                     <div className={`${styles2.menyItemContainer} ${props.active ? "active" : ""}`}>
                     <h3>{props.rett.info.tittel}</h3>
-                    <Image src={props.url} width={100} height={100} />
+                    <Image src={props.url} width={100} height={100} alt="matbilde" />
                     <p>{props.rett.info.beskrivelse}</p>
                         <p>Kr:{props.rett.info.pris}</p>
                     </div>
