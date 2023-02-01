@@ -34,6 +34,7 @@ resource "azurerm_linux_web_app" "cafekopp_as" {
     "GITHUB_SECRET"   = var.NEXT_GITHUB_SECRET
     "NEXTAUTH_SECRET" = var.NEXTAUTH_SECRET
     "NEXTAUTH_URL"    = var.NEXTAUTH_URL
+    "AZURE_STORAGEBLOB_RESOURCEENDPOINT" = "https://cafekoppstorage.blob.core.windows.net/"
   }
 
   sticky_settings {
