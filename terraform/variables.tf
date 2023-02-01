@@ -40,7 +40,7 @@ variable "app-service" {
 
 variable "containerlist" {
   type = list(string)
-  default = ["pasmurt", "koldtbord", "kalde_smaretter", "enkle_varmretter", "tapa", "kaker", "forretter", "hovedretter", "desserter"]
+  default = ["pasmurt", "koldtbord", "kaldesmaretter", "enkleßvarmretter", "tapa", "kaker", "forretter", "hovedretter", "desserter"]
 }
 
 ########################
