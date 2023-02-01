@@ -7,10 +7,10 @@ const azureimages = {
     images: {
         remotePatterns: [
         {
-            protocol: 'https'
-            hostname: 'cafekoppstorage.blob.core.windows.net'
-            port: ''
-            pathname: '**'
+            protocol: 'https',
+            hostname: 'cafekoppstorage.blob.core.windows.net',
+            port: '',
+            pathname: '**',
         }]
     }
 }
