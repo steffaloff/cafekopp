@@ -38,6 +38,11 @@ variable "app-service" {
   }
 }
 
+variable "containerlist" {
+  type = list(string)
+  default = ["pasmurt", "koldtbord", "kaldesmaretter", "enklevarmretter", "tapa", "kaker", "forretter", "hovedretter", "desserter"]
+}
+
 ########################
 # App Service Settings #
 ########################
