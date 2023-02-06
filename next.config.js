@@ -10,7 +10,7 @@ const azureimages = {
             protocol: 'https',
             hostname: 'cafekoppstorage.blob.core.windows.net',
             port: '',
-            pathname: '/**',
+        
         }]
     }
 }
