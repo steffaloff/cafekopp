@@ -5,6 +5,7 @@ const nextConfig = {
 
 const azureimages = {
     images: {
+        domains: ['cafekoppstorage.blob.core.windows.net'],
         remotePatterns: [
         {
             protocol: 'https',
