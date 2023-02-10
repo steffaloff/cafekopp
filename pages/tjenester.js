@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
 export default function Tjenester() {
+
+    const baseURL = "https://cafekoppstorage.blob.core.windows.net"
+
     return (
             <>
             <main className={styles.main}>
@@ -13,13 +17,16 @@ export default function Tjenester() {
                     <h2>Våre Tjenester:</h2>
                     <article>
                         <h3>Bryllup</h3>
+                        <Image src={'${baseURL}/tjenester/bryllup.webp'} alt='bryllup' height={250} width={200} />
                             <p>Vi kan ta oss av hele bryllupsfesten med mat og lokaler.
                             Ta kontakt så kan vi starte planlegging sammen.</p>
                             <br/>
                         <h3>Konfirmasjon</h3>
+                        <Image src={'${baseURL}/tjenester/konfirmasjon.webp'} alt='konfirmasjon' height={250} width={200} />
                             <p>Vi kan ta oss av hele selskapet og dere kan bare slappe av og nyte festen.</p>
                         <br/>
                         <h3>Spesielle Feiringer</h3>
+                        <Image src={'${baseURL}/tjenester/spesiellfeiring.webp'} alt='spesiellfeiring' height={250} width={200} />
                             <p>Vi kan ta oss av hele selskapet og dere kan bare slappe av og nyte festen.</p>
                         <br/>
                     </article>

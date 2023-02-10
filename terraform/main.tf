@@ -49,4 +49,5 @@ resource "azurerm_storage_container" "cafekopp2_containers" {
   for_each = toset(var.containerlist)
   name                     = each.value
   storage_account_name     = azurerm_storage_account.cafekopp2_storage.name
+  container_access_type    = "blob"
 }
